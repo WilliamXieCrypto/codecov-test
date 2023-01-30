@@ -8,6 +8,16 @@ jobs:
     # run build on latest ubuntu
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:14.6
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: mysecretpassword
+          POSTGRES_DATABASE: my_database
+        ports:
+          - 5432:5432
+
     steps:
       # this will check out the current branch (https://github.com/actions/checkout#Push-a-commit-using-the-built-in-token)
       - uses: actions/checkout@v3
@@ -21,3 +31,7 @@ jobs:
       - run: npm install
       # finally run the tests
       - run: npm test
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: mysecretpassword
+          POSTGRES_DATABASE: my_database
