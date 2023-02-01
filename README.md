@@ -1,4 +1,4 @@
-
+[![Coverage Status](https://coveralls.io/repos/github/WilliamXieCrypto/codecov-test/badge.svg?branch=main)](https://coveralls.io/github/WilliamXieCrypto/codecov-test?branch=main)
 
 ## Description
 
